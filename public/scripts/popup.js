@@ -1,46 +1,46 @@
 'use strict';
 /* encompasses all popups: containing forms or just a large verdion of picture from card */
 
-class Popup {
+export default class Popup {
 
-    constructor(popupData) {
-        this.popupElement = popupData.element;
-        this.closeButton = this.popupElement.querySelector('.popup__close');
-        this.pictureElement = document.getElementById('picture');
-        this.removeImage = () => {
-            if (this.popupElement === this.pictureElement) {
-                this.popupElement.querySelector('.popup__image').removeAttribute('src');
-            }
-        }
-    }
+  constructor(popupData) {
+      this.popupElement = popupData.element;
+      this.closeButton = this.popupElement.querySelector('.popup__close');
+      this.pictureElement = document.getElementById('picture');
+      this.removeImage = () => {
+          if (this.popupElement === this.pictureElement) {
+              this.popupElement.querySelector('.popup__image').removeAttribute('src');
+          }
+      }
+  }
 
-    open() {
-        this.popupElement.classList.add('popup_is-opened');
-        this.popupElement.addEventListener('click', this.close.bind(this));
-        document.addEventListener('keydown', this.close.bind(this));
-    }
+  open() {
+      this.popupElement.classList.add('popup_is-opened');
+      this.popupElement.addEventListener('click', this.close.bind(this));
+      document.addEventListener('keydown', this.close.bind(this));
+  }
 
-    close(event) {
-        const self = this;
-        const closeHandler = () => {
-            this.popupElement.classList.remove('popup_is-opened');
-            this.removeImage.bind(this);
-            this.popupElement.removeEventListener('click', this.close);
-            document.removeEventListener('keydown', this.close);
-        }
-        if (event.type === 'keydown' && event.key === 'Escape') {                                       //handles closing popup by clicking Esc
-            closeHandler();
-        } else if (event.type === 'click') {
-            if (event.target.closest('.popup__content') === null || event.target === self.closeButton) { //handles clicks outside of popup area
-                closeHandler();
-            }
-        } else if (event.type === 'submit') {
-            closeHandler();
-        }
-    } 
-}   
- 
-class Form extends Popup {
+  close(event) {
+      const self = this;
+      const closeHandler = () => {
+          this.popupElement.classList.remove('popup_is-opened');
+          this.removeImage.bind(this);
+          this.popupElement.removeEventListener('click', this.close);
+          document.removeEventListener('keydown', this.close);
+      }
+      if (event.type === 'keydown' && event.key === 'Escape') {                                       //handles closing popup by clicking Esc
+          closeHandler();
+      } else if (event.type === 'click') {
+          if (event.target.closest('.popup__content') === null || event.target === self.closeButton) { //handles clicks outside of popup area
+              closeHandler();
+          }
+      } else if (event.type === 'submit') {
+          closeHandler();
+      }
+  }
+}
+
+export class Form extends Popup {
 
     constructor(formData, functions) {
         super(formData);
@@ -87,7 +87,7 @@ class Form extends Popup {
         if (this.form === document.forms.editinfo) {
             const userName = document.querySelector('.user-info__name');
             const userJob = document.querySelector('.user-info__job');
-            this.form.name.value = userName.textContent;                    //setting default values 
+            this.form.name.value = userName.textContent;                    //setting default values
             this.form.info.value = userJob.textContent;                     //of edit form input fields
             this.setButton();
         }
@@ -100,7 +100,6 @@ class Form extends Popup {
         event.preventDefault();
         if (!this.submitButton.hasAttribute('disabled')) {
             if (this.form === document.forms.new) {
-                console.log(this);
                 this.container.addCard(event);
                 this.close(event);
                 this.submitButton.setAttribute('disabled', '');

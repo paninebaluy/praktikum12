@@ -1,7 +1,7 @@
 'use strict';
 /* manages all cards on the main page */
 
-class CardList {
+export default class CardList {
 
     constructor(listData, functions, myData) {
         this.template = listData.template;
@@ -16,6 +16,7 @@ class CardList {
         this.functions = functions;
     }
 
+    //loads all cards on page
     render() {
         this.api.getCards()
         .then( (res) => res.forEach(function (cardItem) {
@@ -26,12 +27,13 @@ class CardList {
                 container: document.getElementById('picture'),
             };
             const anotherCard = this.newCard(cardParams, this.functions, this.myData);
-            anotherCard.create();   
+            anotherCard.create();
             this.container.appendChild(anotherCard.card);                               
         }.bind(this)))
         .catch( (err) => console.log('Failed to render cards. Reason: ' + err) );
     }
 
+    //adds a new card to page
     addCard(event) {
         event.preventDefault();
         this.api.loadingButtonText(true, this.button, this.buttonText);

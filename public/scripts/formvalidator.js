@@ -1,7 +1,7 @@
 'use strict';
 /* encompasses all validation methods used in forms */
 
-class FormValidator {
+export default class FormValidator {
 
   constructor(form) {
     this.button = form.querySelector('.popup__button');
@@ -15,6 +15,7 @@ class FormValidator {
     };
   }
 
+  //checks validity of input fields and posts error messages
   checkInputValidity(event) {                                                             //validates data in forms
     const element = event.target;
 
@@ -37,6 +38,7 @@ class FormValidator {
     element.nextElementSibling.textContent = this.errorMessage;                           //prints error messages
   }
 
+  //changes submit form button to enabled or disabled (default)
   setSubmitButtonState() {
     const isFormValid = Array.from(this.inputs).every((input) => input.validity.valid);   //changes the state of submit button
     if (isFormValid) {
