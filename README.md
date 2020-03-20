@@ -17,7 +17,7 @@ $> git clone https://github.com/paninebaluy/praktikum12
 
 $> npm run start
 
-    The webpage will open in your default browser using port 3000 as default: 
+    The webpage will open in your default browser using port 3000 as default: http://localhost:3000/ 
 
 ### Front end pat of the project includes
 1. A profile section with user's name and information, as well as a changeable avatar (for now, it may be changed with a function only).
