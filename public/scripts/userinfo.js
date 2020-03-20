@@ -37,7 +37,7 @@ export default class UserInfo {
     this.api.changeAvatar(url);
   }
 
-  //requests user info from server
+  // requests user info from server
   loadUserInfo() {
     this.api.getUserInfo()
       .then( (res) => {
