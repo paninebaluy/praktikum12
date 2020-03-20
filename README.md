@@ -11,7 +11,7 @@ It's an interactive web page for sharing pictures with short titles.
 
     Clone this repository
 
-$> git clone https://github.com/paninebaluy/praktikum11
+$> git clone https://github.com/paninebaluy/praktikum12
 
     Run script that starts the local server
 
@@ -55,6 +55,8 @@ https://paninebaluy.github.io/praktikum12/
 
 ### Further plans
 + Create a popup with a form for loading an avatar picture to server (API function ready)
+
+[To top/Наверх](#Mesto)
 
 # Mesto
 ## RU
@@ -100,7 +102,7 @@ $> npm run start
 + Node.js
 + Express.js
 + Нативный JS
-+ HTML
++ HTMLEditing praktikum12_README.md at develop-webpack · paninebaluy_praktikum12
 + CSS
 + Git
 + Webpack
