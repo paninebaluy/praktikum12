@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "webpack-build": "webpack --mode production",
+    "webpack-dev": "webpack-dev-server --mode development --open"
   },
   "author": "Natalia Dolgushina",
   "license": "MIT",
@@ -13,7 +15,10 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
