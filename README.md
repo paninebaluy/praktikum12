@@ -2,7 +2,7 @@
 ## EN
 [на русском](#ru)
 
-_v2.0.1 - updated routes in back end middleware files, fixed response file format_
+_v2.0.2 - updated route format, fixed syntax_
 
 Mesto is a single page project, part of sprint 12 in [Yandex.Praktikum](https://praktikum.yandex.ru/profile/web-developer/) study program.
 It's an interactive web page for sharing pictures with short titles.
@@ -61,7 +61,7 @@ https://paninebaluy.github.io/praktikum12/
 # Mesto
 ## RU
 
-_v2.0.0 - к фронтендовой части проекта добавлен вебпак, сайт запущен на GitHub Pages (только фронтенд)._
+_v2.0.2 - исправлен роутинг, добавлены изменения в синтаксисе для соответствия стилю linter/airbnb_
 
 Место &mdash; одностраничный проект, созданный в рамках спринта 12-й учебной программы [Яндекс.Практикума](https://praktikum.yandex.ru/profile/web-developer/).
 Это интерактивный сайт, пользователи которого могут делиться изображениями с кратким названием.
