@@ -1,4 +1,5 @@
 const invalidUrl = require('express').Router({ mergeParams: true });
+
 const responses = require('../data/responses');
 
 invalidUrl.get('*', (req, res) => {

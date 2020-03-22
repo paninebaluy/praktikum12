@@ -1,4 +1,5 @@
 const getUserData = require('express').Router({ mergeParams: true });
+
 const users = require('../data/users');
 const responses = require('../data/responses');
 
@@ -8,6 +9,7 @@ getUserData.get('/:id', (req, res) => {
   if (!user) {
     const { userNotFound } = responses.find((response) => response.userNotFound);
     res.status(404).send(userNotFound);
+    return;
   }
   res.status(200).send(user);
 });

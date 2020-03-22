@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const router = require('./routes/router');
+
+const router = require('./routes');
 const logger = require('./middleware/logging');
 
 const { PORT = 3000 } = process.env;
