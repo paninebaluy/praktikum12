@@ -2,7 +2,7 @@
 ## EN
 [на русском](#ru)
 
-_v2.0.0 - added webpack to frontend features, deployed frontend on GitHub Pages_
+_v2.0.1 - updated routes in back end middleware files, fixed response file format_
 
 Mesto is a single page project, part of sprint 12 in [Yandex.Praktikum](https://praktikum.yandex.ru/profile/web-developer/) study program.
 It's an interactive web page for sharing pictures with short titles.
