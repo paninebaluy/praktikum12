@@ -12,6 +12,3 @@ node_modules
 # Optional REPL history
 .DS_Store
 .idea
-
-# keys
-*-key*

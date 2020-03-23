@@ -2,7 +2,7 @@
   "name": "sprint12",
   "version": "1.0.0",
   "description": "Praktikum 12 project. Basically Praktikum 11 plus routing with Express.js. For more info, see Readme.md",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
