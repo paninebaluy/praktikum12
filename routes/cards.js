@@ -1,9 +1,7 @@
+const getCardData = require('express').Router({ mergeParams: true });
+
 const cards = require('../data/cards');
 
-const getCardData = (req, res) => {
-  res.status(200).send(cards);
-};
+getCardData.get('/', (req, res) => res.status(200).send(cards));
 
-module.exports = {
-  getCardData,
-};
+module.exports = getCardData;

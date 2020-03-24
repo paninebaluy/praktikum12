@@ -1,25 +1,21 @@
+const getUserData = require('express').Router({ mergeParams: true });
+
 const users = require('../data/users');
-const { userNotFound } = require('../data/responses');
+const responses = require('../data/responses');
 
-const getOneUser = (req, res) => {
-  // eslint-disable-next-line arrow-body-style
-  const user = users.find((item) => {
-    // eslint-disable-next-line no-underscore-dangle
-    return item._id === req.params.id;
-  });
-
+getUserData.get('/:id', (req, res) => {
+  // eslint-disable-next-line no-underscore-dangle
+  const user = users.find((item) => item._id === req.params.id);
   if (!user) {
+    const { userNotFound } = responses.find((response) => response.userNotFound);
     res.status(404).send(userNotFound);
+    return;
   }
-  res.send(user);
-};
+  res.status(200).send(user);
+});
 
-const getUserData = (req, res) => {
+getUserData.get('/', (req, res) => {
   res.status(200).send(users);
-  res.end();
-};
+});
 
-module.exports = {
-  getOneUser,
-  getUserData,
-};
+module.exports = getUserData;
