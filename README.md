@@ -78,6 +78,12 @@ _v2.0.2 - исправлен роутинг, добавлены изменени
 
 $> git clone https://github.com/paninebaluy/praktikum12
 
+    Установить все зависимости проекта из package.json
+    
+$> cd projectdirectory
+
+$> npm install
+
     Запустить скрипт запуска сервера
 
 $> npm run start
