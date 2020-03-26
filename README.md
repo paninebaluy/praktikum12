@@ -13,6 +13,11 @@ It's an interactive web page for sharing pictures with short titles.
 
 $> git clone https://github.com/paninebaluy/praktikum12
 
+    Install all project dependencies from package.json
+    
+$> cd projectdirectory
+$> npm install
+
     Run script that starts the local server
 
 $> npm run start
